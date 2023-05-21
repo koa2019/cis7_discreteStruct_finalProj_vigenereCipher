@@ -3,7 +3,7 @@
     <type>org.netbeans.modules.cnd.makeproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
-            <name>cis7_v1_project_vigenereCipher</name>
+            <name>cis7_v3.2_projVigenereCipher_createKey_encrypt</name>
             <c-extensions>cpp</c-extensions>
             <cpp-extensions/>
             <header-extensions/>

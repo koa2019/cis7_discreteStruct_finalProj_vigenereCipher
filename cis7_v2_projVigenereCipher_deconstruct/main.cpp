@@ -2,22 +2,15 @@
  * File:    main.cpp
  * Author:  Danielle F
  * Created: 05-20-23 @ 5:36 PM
- * Purpose:  CIS 7 Final project Case 3: Vigenere Cipher v1
+ * Purpose:  CIS 7 Final project Case 3: Vigenere Cipher v2_deconstruct
  * 
- * v1:
- * Creates an alphabet array with range [0,25].
-  
- * Takes a plaintext string and finds each letters corresponding
-   value in the alphabet [0,25] and sets the corresponding letter's array index to a new array.
-  
- * Takes an encrypted string and finds each letters corresponding
-   value in the alphabet [0,25] and sets the corresponding letter's array index to a new array.
- 
- * Uses third letter from plaintext and third letter from cipher and applies 
+ * v2_deconstruct:
+
+ * Loops through the plaintext's length, and compares a letter from plaintext and 
+   the corresponding letter from cipher and applies 
    the Shift formula using the alphabet values of each corresponding letter and 
    finds the number of places the plaintext letter was shift. The shift value is
    then converted back to a letter it represents in the key string.
- 
  * 
  * numAlpha = 26;
  * Encrypt formula:  Encrypt = (pTextString + shift) mod 26
@@ -56,26 +49,26 @@ void prntStrArray(string, string, int []);
 int main(int argc, char** argv) {
 
     //Set random number seed once here
-    //srand(static_cast<unsigned int> (time(0)));
+    srand(static_cast<unsigned int> (time(0)));
     //rand()%90+10;//2 digit numbers
 
-    
-    /**********Declare variables here**********/
+    //Declare variables here
     char azChar[NUM_LTTRS] = {};
     int azVal[NUM_LTTRS] = {};
-    string pTextString = "";
-    string encryptdString = "";
+    string pTextString   = "";
+    string cipherString = "";
     string key = "";
+    
+    
     pTextString = "GEEKSFORGEEKS"; //"geeksforgeeks";
-    encryptdString = "GCYCZFMLYLEIM";
+    cipherString = "GCYCZFMLYLEIM";
     int pTextSize = pTextString.length();
     int pText[pTextSize] = {};
-    int encrypt[pTextSize] = {};
+    int cipher[pTextSize] = {};
     int keyShiftArr[pTextSize] = {};
-
     
     /**********Initialize variables here**********/
-
+    
     // Set arrays with the alphabet [A,Z]==[0,25]
     setAZArrays(azChar, azVal);
     //prntCharArr(azChar);
@@ -83,30 +76,43 @@ int main(int argc, char** argv) {
 
 
     // Find the value of each letter in pTextString string and save azChar's index to an array
-    setStrArr(azChar, pTextString, pText);
+    setStrArr(azChar, pTextString, pText);  
     //prntStrArray("Plaintext", pTextString, pText);
-
-    // Find the value of each letter in encrypted string and save azChar's index to an array
-    setStrArr(azChar, encryptdString, encrypt);
-    //prntStrArray("Ciphertext", encryptdString, encrypt);
-
-
-    /**********Find the shift for each letter of the encrypted string **********/
-    int shift = 0, mod = 26, num = 0, encryptdChar = 0, decryptdChar = 0;
-
-    encryptdChar = encrypt[2];
-    decryptdChar = pText[2];
-
-    num = (encryptdChar - decryptdChar + mod);
-
-    // Shift formula:  Shift = (pTextString - Decrypt + 26) mod 26
-    shift = (num - ((num / mod) * mod));
-    keyShiftArr[pTextSize] = shift;
-    key += azChar[shift];
-
-    cout << "num = " << num << "  shift = " << shift << " == " << azChar[shift] << endl;
-    cout << "key: " << key << endl;
-
+    
+    // Find the value of each letter in ciphered string and save azChar's index to an array
+    setStrArr(azChar, cipherString, cipher);
+    //prntStrArray("Ciphertext", cipherString, cipher);
+   
+    
+    /**********Find the shift for each letter of the ciphered string **********/
+    int shift = 0, 
+            mod = 26, 
+            num = 0, 
+            cipherChar = 0, //
+            decryptdChar = 0; // plaintext[i]
+    
+    for (int i = 0; i < pTextSize; i++) {
+        
+        cipherChar = cipher[i];
+        decryptdChar = pText[i];
+        
+        num = (cipherChar - decryptdChar + mod);
+    
+        // Shift formula:  Shift = (pTextString - Decrypt + 26) mod 26
+        shift = (num - ((num/mod)*mod)); 
+        keyShiftArr[i] = shift;
+        key += azChar[shift];
+        
+        //cout << setw(2) << decryptdChar  << " = " << pTextString[i] << "->"
+             //<< cipherString[i] << " = " << setw(2) << cipherChar   << " "
+             //<< " num = "       << setw(2) << num 
+             //<< " shift = "     << setw(2) << keyShiftArr[i] 
+             //<< " == "          << setw(2) << azChar[shift] << endl;
+    }
+    
+    cout << "plaintext: " << pTextString << endl << setw(11) << "cipher: " << cipherString << endl << setw(11) << "key: " << key << endl;
+    //prntStrArray("Key", key, keyShiftArr);
+    
 
     return 0;
 }
@@ -134,7 +140,6 @@ void setStrArr(char azChar[], string pTextString, int pText[]) {
 
 
 // Set alphabet array and alphabet's value array
-
 void setAZArrays(char azChar[], int azVal[]) {
 
     // 'A' ASCII value is 65. 'Z' = 90
@@ -154,33 +159,31 @@ void setAZArrays(char azChar[], int azVal[]) {
 
 
 // Print converted strings alphabet values
-
-void prntStrArray(string str1, string str, int strVal[]) {
-
+void prntStrArray(string str1, string str, int strVal[]){    
+    
     for (int i = 0; i < str.length(); i++) {
-
-        if (i == 0) {
-            cout << endl << setw(10) << str1 << ":  " << str[i];
+        
+        if(i==0){
+            cout << endl << setw(10) << str1 << ":  " << str[i];        
         } else {
             cout << setw(3) << str[i];
         }
         //cout << str[i] << " == " << strVal[i] << " \n";
-    }
-
+    }  
+    
     for (int i = 0; i < str.length(); i++) {
-
-        if (i == 0) {
-            cout << endl << setw(10) << "char value" << ":  " << strVal[i];
-        } else {
-            cout << setw(3) << strVal[i];
+        
+        if(i==0){
+            cout << endl << setw(10) << "char value" << ":  " << strVal[i];            
+        } else { 
+            cout << setw(3) << strVal[i]; 
         }
-    }
-    cout << endl;
+    }  
+    cout<<endl;
 }
 
 // Print each letter in alphabets value
-
-void prntIntArr(int arr[], int pTextSize) {
+void prntIntArr(int arr[], int pTextSize) {   
     for (int i = 0; i < pTextSize; i++) {
         cout << setw(3) << arr[i];
     }
@@ -188,8 +191,7 @@ void prntIntArr(int arr[], int pTextSize) {
 }
 
 // Print all letters in alphabet
-
-void prntCharArr(char azChar[]) {
+void prntCharArr(char azChar[]) { 
     for (int i = 0; i < NUM_LTTRS; i++) {
         cout << setw(3) << azChar[i];
     }
