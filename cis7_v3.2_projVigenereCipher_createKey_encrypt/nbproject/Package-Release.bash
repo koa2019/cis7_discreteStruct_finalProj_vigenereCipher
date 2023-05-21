@@ -13,9 +13,9 @@ CND_BUILDDIR=build
 CND_DLIB_EXT=dll
 NBTMPDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}/tmp-packaging
 TMPDIRNAME=tmp-packaging
-OUTPUT_PATH=${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/cis7_v4_projvigenerecipher_createkey_encrypt
-OUTPUT_BASENAME=cis7_v4_projvigenerecipher_createkey_encrypt
-PACKAGE_TOP_DIR=cis7v4projvigenereciphercreatekeyencrypt/
+OUTPUT_PATH=${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/cis7_v3.2_projvigenerecipher_createkey_encrypt
+OUTPUT_BASENAME=cis7_v3.2_projvigenerecipher_createkey_encrypt
+PACKAGE_TOP_DIR=cis7v3.2projvigenereciphercreatekeyencrypt/
 
 # Functions
 function checkReturnCode
@@ -60,15 +60,15 @@ mkdir -p ${NBTMPDIR}
 
 # Copy files and create directories and links
 cd "${TOP}"
-makeDirectory "${NBTMPDIR}/cis7v4projvigenereciphercreatekeyencrypt/bin"
+makeDirectory "${NBTMPDIR}/cis7v3.2projvigenereciphercreatekeyencrypt/bin"
 copyFileToTmpDir "${OUTPUT_PATH}.exe" "${NBTMPDIR}/${PACKAGE_TOP_DIR}bin/${OUTPUT_BASENAME}.exe" 0755
 
 
 # Generate tar file
 cd "${TOP}"
-rm -f ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/package/cis7v4projvigenereciphercreatekeyencrypt.tar
+rm -f ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/package/cis7v3.2projvigenereciphercreatekeyencrypt.tar
 cd ${NBTMPDIR}
-tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/package/cis7v4projvigenereciphercreatekeyencrypt.tar *
+tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/package/cis7v3.2projvigenereciphercreatekeyencrypt.tar *
 checkReturnCode
 
 # Cleanup
