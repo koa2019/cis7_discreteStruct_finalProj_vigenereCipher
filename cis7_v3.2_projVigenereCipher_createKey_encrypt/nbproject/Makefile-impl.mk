@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=cis7_v1_project_vigenereCipher
+PROJECTNAME=cis7_v4_projVigenereCipher_createKey_encrypt
 
 # Active Configuration
 DEFAULTCONF=Debug
