@@ -13,9 +13,9 @@ CND_BUILDDIR=build
 CND_DLIB_EXT=dll
 NBTMPDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}/tmp-packaging
 TMPDIRNAME=tmp-packaging
-OUTPUT_PATH=${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/cis7_v1_projvigenerecipher_deconstruct
-OUTPUT_BASENAME=cis7_v1_projvigenerecipher_deconstruct
-PACKAGE_TOP_DIR=cis7v1projvigenerecipherdeconstruct/
+OUTPUT_PATH=${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/cis7_v1_projvigenerecipher_deconstruct1char
+OUTPUT_BASENAME=cis7_v1_projvigenerecipher_deconstruct1char
+PACKAGE_TOP_DIR=cis7v1projvigenerecipherdeconstruct1char/
 
 # Functions
 function checkReturnCode
@@ -60,15 +60,15 @@ mkdir -p ${NBTMPDIR}
 
 # Copy files and create directories and links
 cd "${TOP}"
-makeDirectory "${NBTMPDIR}/cis7v1projvigenerecipherdeconstruct/bin"
+makeDirectory "${NBTMPDIR}/cis7v1projvigenerecipherdeconstruct1char/bin"
 copyFileToTmpDir "${OUTPUT_PATH}.exe" "${NBTMPDIR}/${PACKAGE_TOP_DIR}bin/${OUTPUT_BASENAME}.exe" 0755
 
 
 # Generate tar file
 cd "${TOP}"
-rm -f ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/package/cis7v1projvigenerecipherdeconstruct.tar
+rm -f ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/package/cis7v1projvigenerecipherdeconstruct1char.tar
 cd ${NBTMPDIR}
-tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/package/cis7v1projvigenerecipherdeconstruct.tar *
+tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/package/cis7v1projvigenerecipherdeconstruct1char.tar *
 checkReturnCode
 
 # Cleanup
