@@ -79,10 +79,10 @@ int main(int argc, char** argv) {
     int azVal[NUM_LTTRS] = {};
     
     setAZArrays(azChar, azVal); // Set arrays with the alphabet [A,Z]==[0,25]
-    //prntAZ(azChar, azVal);
+    prntAZ(azChar, azVal);
     getKey(azChar, azVal); // Find key  
-    getEncrypt(azChar);
-    getDecrypt(azChar);
+//    getEncrypt(azChar);
+//    getDecrypt(azChar);
     
     return 0;
 }
@@ -338,7 +338,7 @@ void setAZArrays(char azChar[], int azVal[]) {
 
     // 'A' ASCII value is 65. 'Z' = 90
     char ch = 65;
-
+    
     // Set array with every letter in alphabet
     for (int i = 0; i < NUM_LTTRS; i++) {
         azChar[i] = ch;
