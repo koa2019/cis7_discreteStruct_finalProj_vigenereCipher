@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=cis7_v6_vigenereCipher
+PROJECTNAME=cis7_v5_addUserInput
 
 # Active Configuration
 DEFAULTCONF=Debug

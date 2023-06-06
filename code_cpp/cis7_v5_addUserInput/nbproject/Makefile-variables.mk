@@ -9,19 +9,19 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=Cygwin-Windows
 CND_ARTIFACT_DIR_Debug=dist/Debug/Cygwin-Windows
-CND_ARTIFACT_NAME_Debug=cis7_v6_vigenerecipher
-CND_ARTIFACT_PATH_Debug=dist/Debug/Cygwin-Windows/cis7_v6_vigenerecipher
+CND_ARTIFACT_NAME_Debug=cis7_v5_adduserinput
+CND_ARTIFACT_PATH_Debug=dist/Debug/Cygwin-Windows/cis7_v5_adduserinput
 CND_PACKAGE_DIR_Debug=dist/Debug/Cygwin-Windows/package
-CND_PACKAGE_NAME_Debug=cis7v6vigenerecipher.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/Cygwin-Windows/package/cis7v6vigenerecipher.tar
+CND_PACKAGE_NAME_Debug=cis7v5adduserinput.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/Cygwin-Windows/package/cis7v5adduserinput.tar
 # Release configuration
 CND_PLATFORM_Release=Cygwin-Windows
 CND_ARTIFACT_DIR_Release=dist/Release/Cygwin-Windows
-CND_ARTIFACT_NAME_Release=cis7_v6_vigenerecipher
-CND_ARTIFACT_PATH_Release=dist/Release/Cygwin-Windows/cis7_v6_vigenerecipher
+CND_ARTIFACT_NAME_Release=cis7_v5_adduserinput
+CND_ARTIFACT_PATH_Release=dist/Release/Cygwin-Windows/cis7_v5_adduserinput
 CND_PACKAGE_DIR_Release=dist/Release/Cygwin-Windows/package
-CND_PACKAGE_NAME_Release=cis7v6vigenerecipher.tar
-CND_PACKAGE_PATH_Release=dist/Release/Cygwin-Windows/package/cis7v6vigenerecipher.tar
+CND_PACKAGE_NAME_Release=cis7v5adduserinput.tar
+CND_PACKAGE_PATH_Release=dist/Release/Cygwin-Windows/package/cis7v5adduserinput.tar
 #
 # include compiler specific variables
 #
