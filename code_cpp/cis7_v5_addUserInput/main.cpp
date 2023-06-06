@@ -80,28 +80,28 @@ int main(int argc, char** argv) {
     setAZArrays(azUC,azLC, azVal); // Set arrays with the alphabet [A,Z]==[0,25]
     prntAZ(azUC, azLC, azVal);
 
-    //    int ans = 0;
-    //    do {
-    //        cout << "Menu\n"
-    //                << "1. Encrypt\n"
-    //                << "2. Decrypt\n"
-    //                << "3. Exit\n";
-    //        cin >> ans;
-    //
-    //        switch (ans) {
-    //            case 1:
-    //            {
-    //encrypt(azUC,azLC);
-    //                break;
-    //            }
-    //            case 2:
-    //            {
-                    decrypt(azUC,azLC);
-    //                break;
-    //            }
-    //                //default: { exit();}
-    //        }
-    //    } while ((ans == 1 || ans == 2));
+    int ans = 0;
+    do {
+        cout << "Menu\n"
+                << "1. Encrypt\n"
+                << "2. Decrypt\n"
+                << "3. Exit\n";
+        cin >> ans;
+
+        switch (ans) {
+            case 1:
+            {
+                encrypt(azUC, azLC);
+                break;
+            }
+            case 2:
+            {
+                decrypt(azUC, azLC);
+                break;
+            }
+                //default: { exit();}
+        }
+    } while ((ans == 1 || ans == 2));
     return 0;
 }
 
